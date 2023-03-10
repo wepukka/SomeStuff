@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.panelCon {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.panel {
+  width: 100%;
+  position: relative;
+}
+.panel .sun,
+.moon {
+  width: 100px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  top: 45%;
+  border-radius: 50px;
+}
+
+#pane-1 {
+  background: linear-gradient(rgb(42, 154, 189), yellow);
+}
+#pane-1 .sun {
+  top: 20%;
+  background-color: rgb(245, 229, 5);
+  box-shadow: rgb(245, 229, 5) 0px 20px 100px 75px;
+}
+
+#pane-2 {
+  background: linear-gradient(rgb(42, 154, 189), rgb(42, 154, 189));
+}
+#pane-2 .sun {
+  background-color: yellow;
+  box-shadow: yellow 0px 20px 50px 25px;
+}
+
+#pane-3 {
+  background: linear-gradient(rgb(44, 43, 43), rgb(42, 154, 189));
+}
+#pane-3 .sun {
+  background-color: rgb(245, 221, 3);
+  box-shadow: rgb(245, 221, 3) 0px 5px 50px 10px;
+}
+
+#pane-4 {
+  position: relative;
+  background: linear-gradient(black, rgb(44, 43, 43));
+}
+#pane-4 .moon {
+  top: 30%;
+}
+
+.cloud {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.fa-star {
+  position: absolute;
+  animation: star 4s ease-in-out infinite;
+}
+
+.star-string {
+  width: 1px;
+  position: absolute;
+  background-color: white;
+  text-align: center;
+}
+
+.checked {
+  position: absolute;
+  left: -10px;
+  bottom: -25px;
+}
+
+@keyframes star {
+  0% {
+    rotate: 190deg;
+  }
+
+  50% {
+    rotate: 360deg;
+  }
+  100% {
+    rotate: 190deg;
+  }
+}
+
+.checked {
+  width: 20px;
+  height: 20px;
+  color: rgb(255, 255, 255);
+}
+
+#mountains {
+  background-image: url("mountains-nobg.png");
+  position: fixed;
+  background-position: 50% 0%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  bottom: -200px;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}

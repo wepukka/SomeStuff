@@ -3,17 +3,27 @@ $(document).ready(function () {
   $(".panel").height(winHeight);
   $("body").height(winHeight * $(".panel").length);
 
+  console.log($(window).innerHeight());
   // Create stars
+
+  function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
   for (let i = 0; i < 5; i++) {
-    let mathTop = Math.floor(Math.random() * (-90 - -70 + 1) + -70); // starString out of viewport//
-    let mathLeft = Math.floor(Math.random() * 100);
-
     let starString = document.createElement("div");
-    starString.classList.add("star-string");
-    starString.style.height = $(window).innerHeight().toString() + "px"; // starString height to viewport height
 
-    starString.style.top = `${mathTop}%`;
-    starString.style.left = `${mathLeft}%`;
+    let starStringPosition = Math.floor(Math.random() * 100);
+    let starStringHeight = getRandomArbitrary(
+      // Min one sixth of viewport height, Max one fourth
+      $(window).innerHeight() / 6,
+      $(window).innerHeight() / 4
+    );
+
+    starString.style.left = `${starStringPosition}%`;
+    starString.style.height = `${starStringHeight.toString()}px`;
+
+    starString.classList.add("star-string");
 
     let starClasses = ["fa", "fa-star", "checked"];
     let starElement = document.createElement("div");

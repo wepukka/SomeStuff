@@ -3,9 +3,6 @@ $(document).ready(function () {
   $(".panel").height(winHeight);
   $("body").height(winHeight * $(".panel").length);
 
-  console.log($(window).innerHeight());
-  // Create stars
-
   function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
   }
@@ -34,7 +31,6 @@ $(document).ready(function () {
 });
 
 window.addEventListener("resize", function (event) {
-  console.log(document.getElementById("pane-4"));
   // Set panel height to window height //
   $(".panel").height($(window).innerHeight());
 });
@@ -42,5 +38,4 @@ $(window).on("scroll", function () {
   // Reverse scroll
   $(".panelCon").css("bottom", $(window).scrollTop() * -1);
   $(".cloud").css("right", $(window).scrollTop() * 1);
-  console.log($(window).scrollTop() * -1);
 });
